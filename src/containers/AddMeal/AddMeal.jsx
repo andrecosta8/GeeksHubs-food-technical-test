@@ -33,8 +33,8 @@ const AddMeal = () => {
 
   const createNewMeal = () => {
     if (formError === "no error") {
-      let newMealJSON = JSON.stringify(newMeal);
-      setFeedbackMessage("Your meal has been created", newMealJSON);
+      JSON.stringify(newMeal);
+      setFeedbackMessage("Your meal has been created");
     } else setFeedbackMessage(formError);
   };
 
