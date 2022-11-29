@@ -1,0 +1,11 @@
+.mealsForm {
+    margin: 2em;
+}
+
+.feedbackMessageError {
+    color: red;
+}
+
+.feedbackMessageSuccess {
+    color: green
+}
