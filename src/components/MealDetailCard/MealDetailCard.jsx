@@ -3,11 +3,15 @@ import './MealDetailCard.css'
 
 const MealDetailCard = ({meal}) => {
   return (
+    <div className='detailPage'>
     <div className='detailCardDesign'>
-                <img className='detailImage' src={meal.strMealThumb} alt={meal.strMeal}></img>
+        <div className="leftside">
+        <img className='detailImage' src={meal.strMealThumb} alt={meal.strMeal}></img>
                 <div>{meal.strMeal}</div>
-                <div>{meal.strArea}</div>
-                <div>{meal.strYoutube}</div>
+        </div>
+                <div className="righside">
+                <div>Country: {meal.strArea}</div>
+                <div className='instructions'>Instructions: {meal.strInstructions}</div>
                 <div className='ingredientsDesign'>
                 <span>INGREDIENTS: </span>
                 <div>{meal.strIngredient1 !== "" && meal.strIngredient1}</div>
@@ -31,7 +35,8 @@ const MealDetailCard = ({meal}) => {
                 <div>{meal.strIngredient19 !== "" && ", "+meal.strIngredient19}</div>
                 <div>{meal.strIngredient20 !== "" && ", "+meal.strIngredient20}</div>
                 </div>
-                
+                </div>
+                </div>
     </div>
   )
 }

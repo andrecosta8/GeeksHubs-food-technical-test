@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMealChangeContext } from "../../providers/MealProvider";
+import './MealCard.css'
 
 const MealCard = ({ value }) => {
   let navigate = useNavigate();

@@ -1,5 +1,4 @@
 .searchDiv {
-  height: 100 vh;
   width: 100 vw;
   display: flex;
   flex-direction: column;
@@ -16,29 +15,7 @@
   flex-wrap: wrap;
 }
 
-.mealsDesign {
-  margin: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 230px;
-  background-color: #ef9a53;
-  margin-top: 70px;
-}
 
-.posterDesign {
-  border-radius: 25%;
-  width: 150px;
-}
-
-.mealDescription {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-word;
-}
 .searchInput {
-  margin-top: 50px;
+  margin-top: 0.5em;
 }

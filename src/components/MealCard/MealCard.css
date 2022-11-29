@@ -1,0 +1,27 @@
+.mealDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  .mealCardDesign {
+    margin-right: 1em;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 230px;
+    height: 230px;
+    background-color: #ef9a53;
+    margin-top: 2em;
+    border-radius: 25%;
+  }
+
+  .mealImage {
+    border-radius: 25%;
+    width: 150px;
+    margin-bottom: 1em;
+  }

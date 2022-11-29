@@ -39,7 +39,6 @@ const Foodsearch = () => {
         className="searchInput"
         onChange={(e) => inputSearchHandler(e)}
       />
-
       {meals.length > 0 && (
         <div className="mealsContainer">
           {meals.map((food) => {
@@ -47,12 +46,12 @@ const Foodsearch = () => {
               <div
                 className="mealsDesign"
               >
-
-                <div className="mealDescription">
+                <MealCard value={food} />
+                {/* <div className="mealDescription">
                   {food.strMeal} {food.strCategory} {food.strArea}{" "}
                   {food.strMealTumb} {food.strTags}{" "}
                 </div>
-                <img className="posterDesign" src={food.strMealThumb} />
+                <img className="posterDesign" src={food.strMealThumb} /> */}
               </div>
             );
           })}
