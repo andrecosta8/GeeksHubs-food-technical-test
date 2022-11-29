@@ -6,13 +6,17 @@
   align-items: center;
   background-color: white;
   flex-wrap: wrap;
-  margin-left: 100px;
+  padding-left: 100px;
+  background-color: lightblue;
+  border: 0.5em solid lightskyblue;
 }
 
 .mealsContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: lightblue;
+  
 }
 
 

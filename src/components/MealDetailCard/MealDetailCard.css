@@ -2,6 +2,7 @@
     width: 30em;
     height: 30em;
     border-radius: 25%;
+    padding-bottom: 1em ;
 }
 
 .detailCardDesign{
@@ -9,7 +10,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    padding-top: 5em;
+    background-color: lightblue;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 
 .ingredientsDesign{
@@ -24,4 +28,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
+}
+
+.instructions{
+    text-align: justify;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.detailPage {
+    height: 88vh;
+    background-color: lightblue;
 }

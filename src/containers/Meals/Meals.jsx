@@ -12,6 +12,8 @@ const Foodsearch = () => {
     setSearch(e.target.value);
   };
 
+
+
   useEffect(() => {
     const bring = setTimeout(() => {
       getDataFromAPI(search)
@@ -24,18 +26,11 @@ const Foodsearch = () => {
     return () => clearTimeout(bring);
   }, [search]);
 
-  useEffect(() => {
-    if (meals.length > 0) {
-      console.log("we have this meals...", meals);
-    }
-  }, [meals]);
-
-
   return (
     <div className="searchDiv">
       <input
         name="food"
-        placeholder="search your meal"
+        placeholder="Search your meal..."
         className="searchInput"
         onChange={(e) => inputSearchHandler(e)}
       />
@@ -43,15 +38,8 @@ const Foodsearch = () => {
         <div className="mealsContainer">
           {meals.map((food) => {
             return (
-              <div
-                className="mealsDesign"
-              >
+              <div className="mealsDesign">
                 <MealCard value={food} />
-                {/* <div className="mealDescription">
-                  {food.strMeal} {food.strCategory} {food.strArea}{" "}
-                  {food.strMealTumb} {food.strTags}{" "}
-                </div>
-                <img className="posterDesign" src={food.strMealThumb} /> */}
               </div>
             );
           })}

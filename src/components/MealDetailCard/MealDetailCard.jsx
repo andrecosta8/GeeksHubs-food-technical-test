@@ -7,11 +7,13 @@ const MealDetailCard = ({meal}) => {
     <div className='detailCardDesign'>
         <div className="leftside">
         <img className='detailImage' src={meal.strMealThumb} alt={meal.strMeal}></img>
-                <div>{meal.strMeal}</div>
+                <div><h1>{meal.strMeal}</h1></div>
         </div>
                 <div className="righside">
                 <div>Country: {meal.strArea}</div>
+                <br></br>
                 <div className='instructions'>Instructions: {meal.strInstructions}</div>
+                <br></br>
                 <div className='ingredientsDesign'>
                 <span>INGREDIENTS: </span>
                 <div>{meal.strIngredient1 !== "" && meal.strIngredient1}</div>
