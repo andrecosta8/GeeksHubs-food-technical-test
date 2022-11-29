@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getDataFromAPI } from "../../services/apiCalls";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Meals.css";
+import MealCard from "../../components/MealCard/MealCard";
 
 const Foodsearch = () => {
   const [meals, setMeals] = useState([]);
@@ -29,9 +30,6 @@ const Foodsearch = () => {
     }
   }, [meals]);
 
-  const selectFood = (food) => {
-    console.log(food);
-  };
 
   return (
     <div className="searchDiv">
@@ -48,11 +46,8 @@ const Foodsearch = () => {
             return (
               <div
                 className="mealsDesign"
-                key={food.idMeal}
-                onClick={() => selectFood(food)}
               >
-                {food.strMeal} {food.strCategory} {food.strArea}{" "}
-                {food.strInstructions} {food.strMealTumb} {food.strTags}{" "}
+                <MealCard value={food} key={food.idMeal} />
               </div>
             );
           })}
