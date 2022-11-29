@@ -25,13 +25,12 @@ const AddMeal = () => {
   };
 
   const errorHandler = (e) => {
-    let error = "";
-    error = errorCheck(e.target.value);
+    let error = errorCheck(e.target.value);
     setFormError(error);
   };
 
   const createNewMeal = () => {
-    if (formError === "no error") {
+    if (formError === "ok") {
       JSON.stringify(newMeal);
       setFeedbackMessage("Your meal has been created");
     } else setFeedbackMessage(formError);
@@ -97,7 +96,7 @@ const AddMeal = () => {
           />
         </Form.Item>
         <Form.Item>
-          <Button onClick={(e) => createNewMeal(e)} type="primary">
+          <Button onClick={() => createNewMeal()} type="primary">
             Submit
           </Button>
         </Form.Item>
