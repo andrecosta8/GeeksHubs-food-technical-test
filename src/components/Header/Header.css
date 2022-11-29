@@ -2,22 +2,23 @@
 .headerDesign{
     height: 12vh;
     width: 100vw;
-    position: fixed;
     background-color: lightsalmon;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
     color: white;
+    border-bottom: 0.5em solid salmon; 
 }
 
 .linkDesign {
     font-weight: bold;
-    margin-right: 1em;
+    margin-right: 3em;
     margin-bottom: 0.5em;
     color: white;
     cursor: pointer;
     transition: 0.5s;
+    margin-bottom: 2em;
 }
 
 .linkDesign:hover {

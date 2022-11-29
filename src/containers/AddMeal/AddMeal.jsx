@@ -37,6 +37,7 @@ const AddMeal = () => {
   };
 
   return (
+    <div className="addMealPage">
     <div className="mealsForm">
       <Form form={form} layout="vertical" requiredMark="optional">
         <Form.Item label="Name" required tooltip="Please write the meal's name">
@@ -96,7 +97,7 @@ const AddMeal = () => {
           />
         </Form.Item>
         <Form.Item>
-          <Button onClick={() => createNewMeal()} type="primary">
+          <Button className="button" onClick={() => createNewMeal()} >
             Submit
           </Button>
         </Form.Item>
@@ -111,6 +112,7 @@ const AddMeal = () => {
         {" "}
         {feedbackMessage ? feedbackMessage : null}
       </span>
+    </div>
     </div>
   );
 };
