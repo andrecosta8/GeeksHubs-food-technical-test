@@ -1,4 +1,5 @@
 import React from 'react'
+import MealDetailCard from '../../components/MealDetailCard/MealDetailCard';
 import { useMealContext } from '../../providers/MealProvider'
 
 const MealDetail = () => {
@@ -7,8 +8,7 @@ const MealDetail = () => {
     <div className='mealDetailDesign'>
 
             {meal.idMeal !== undefined &&
-            
-                <div>{meal.strMeal}</div>
+                <MealDetailCard meal={meal} />
             }
         </div>
   )

@@ -1,5 +1,10 @@
 .mealsForm {
-    margin: 2em;
+    padding-top: 18vh;
+    margin-top:0;
+    margin-left: 3em ;
+    margin-right: 3em;
+    display: flex;
+    flex-direction: column;
 }
 
 .feedbackMessageError {

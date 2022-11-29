@@ -2,6 +2,7 @@
 .headerDesign{
     height: 12vh;
     width: 100vw;
+    position: fixed;
     background-color: lightsalmon;
     display: flex;
     flex-direction: row;

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { errorCheck } from "../../services/validate";
-
 import "./AddMeal.css";
 
 const AddMeal = () => {

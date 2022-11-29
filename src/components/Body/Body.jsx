@@ -5,6 +5,7 @@ import Home from "../../containers/Home/Home";
 import MealDetail from "../../containers/MealDetail/MealDetail";
 import Meals from "../../containers/Meals/Meals";
 
+
 const Body = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const Body = () => {
         <Route path="/" element={<Home />} />
         <Route path="/meals" element={<Meals />} />
         <Route path="/mealdetail" element={<MealDetail />} />
-        <Route path='/addmeal' element={<AddMeal/>}/>
+        <Route path="/addmeal" element={<AddMeal />} />
       </Routes>
     </>
   );
