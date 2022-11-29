@@ -1,0 +1,10 @@
+.detailImage{
+    width: 30em;
+    height: 30em;
+}
+.ingredientsDesign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
