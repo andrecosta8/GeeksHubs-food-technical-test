@@ -35,7 +35,7 @@ const Foodsearch = () => {
     <div className="searchDiv">
       <input
         name="food"
-        placeholder="search your favorite meal"
+        placeholder="search your meal"
         className="searchInput"
         onChange={(e) => inputSearchHandler(e)}
       />
@@ -47,7 +47,12 @@ const Foodsearch = () => {
               <div
                 className="mealsDesign"
               >
-                <MealCard value={food} key={food.idMeal} />
+
+                <div className="mealDescription">
+                  {food.strMeal} {food.strCategory} {food.strArea}{" "}
+                  {food.strMealTumb} {food.strTags}{" "}
+                </div>
+                <img className="posterDesign" src={food.strMealThumb} />
               </div>
             );
           })}
@@ -58,11 +63,3 @@ const Foodsearch = () => {
 };
 
 export default Foodsearch;
-
-{
-  /* 
-// const Meals = () => {
-//   useEffect(() => {
-//     getDataFromAPI();
-//   }, []); */
-}
