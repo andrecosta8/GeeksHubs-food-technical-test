@@ -1,14 +1,10 @@
 export const errorCheck = (value) => {
-    let regex = /^[a-zA-Z0-9 ]*$/;
+  let errorMessage = "";
 
-    let errorMessage = "";
-
-    if(value.length === 0){
-        errorMessage = "This field can not be empty"
-    }else if (!regex.test(value)) {
-        errorMessage = "Only letters and numbers are accepted"
-    }else {
-        errorMessage = "no error";
-    }
-    return errorMessage;
-    }
+  if (value.length <= 3) {
+    errorMessage = "All field must be filled and should have 3 characters";
+  } else {
+    errorMessage = "no error";
+  }
+  return errorMessage;
+};

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Input } from "antd";
 import { errorCheck } from "../../services/validate";
 
@@ -16,6 +16,7 @@ const AddMeal = () => {
   });
 
   const [formError, setFormError] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
   const inputHandler = (e) => {
     setNewMeal((prevState) => ({
@@ -27,10 +28,14 @@ const AddMeal = () => {
   const errorHandler = (e) => {
     let error = "";
     error = errorCheck(e.target.value);
-    console.log("ERRROR", error)
-    if (error !== "no error") {
-      setFormError(error)
-    }
+    setFormError(error);
+  };
+
+  const createNewMeal = () => {
+    if (formError === "no error") {
+      let newMealJSON = JSON.stringify(newMeal);
+      setFeedbackMessage("Your meal has been created", newMealJSON);
+    } else setFeedbackMessage(formError);
   };
 
   return (
@@ -93,9 +98,21 @@ const AddMeal = () => {
           />
         </Form.Item>
         <Form.Item>
-          <Button type="primary">Submit</Button>
+          <Button onClick={(e) => createNewMeal(e)} type="primary">
+            Submit
+          </Button>
         </Form.Item>
       </Form>
+      <span
+        className={
+          feedbackMessage === "Your meal has been created"
+            ? "feedbackMessageSuccess"
+            : "feedbackMessageError"
+        }
+      >
+        {" "}
+        {feedbackMessage ? feedbackMessage : null}
+      </span>
     </div>
   );
 };
