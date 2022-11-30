@@ -31,6 +31,7 @@ const AddMeal = () => {
 
   const createNewMeal = () => {
     if (formError === "ok") {
+      console.log(JSON.stringify(newMeal));
       JSON.stringify(newMeal);
       setFeedbackMessage("Your meal has been created");
     } else setFeedbackMessage(formError);
@@ -38,81 +39,85 @@ const AddMeal = () => {
 
   return (
     <div className="addMealPage">
-    <div className="mealsForm">
-      <Form form={form} layout="vertical" requiredMark="optional">
-        <Form.Item label="Name" required tooltip="Please write the meal's name">
-          <Input
-            type="text"
-            name="strMeal"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        <Form.Item
-          label="Category"
-          required
-          tooltip="Please write the meal's category"
+      <div className="mealsForm">
+        <Form form={form} layout="vertical" requiredMark="optional">
+          <Form.Item
+            label="Name"
+            required
+            tooltip="Please write the meal's name"
+          >
+            <Input
+              type="text"
+              name="strMeal"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e)}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Category"
+            required
+            tooltip="Please write the meal's category"
+          >
+            <Input
+              type="text"
+              name="strCategory"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e)}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Area"
+            required
+            tooltip="Please write where this meal is from"
+          >
+            <Input
+              type="text"
+              name="strArea"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e)}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Instructions"
+            required
+            tooltip="Please write the meal's cook instructions "
+          >
+            <Input
+              type="text"
+              name="strInstructions"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e)}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Image"
+            required
+            tooltip="Please write the meal's Image url"
+          >
+            <Input
+              type="text"
+              name="strMealThumb"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e)}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button className="button" onClick={() => createNewMeal()}>
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+        <span
+          className={
+            feedbackMessage === "Your meal has been created"
+              ? "feedbackMessageSuccess"
+              : "feedbackMessageError"
+          }
         >
-          <Input
-            type="text"
-            name="strCategory"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        <Form.Item
-          label="Area"
-          required
-          tooltip="Please write where this meal is from"
-        >
-          <Input
-            type="text"
-            name="strArea"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        <Form.Item
-          label="Instructions"
-          required
-          tooltip="Please write the meal's cook instructions "
-        >
-          <Input
-            type="text"
-            name="strInstructions"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        <Form.Item
-          label="Image"
-          required
-          tooltip="Please write the meal's Image url"
-        >
-          <Input
-            type="text"
-            name="strMealThumb"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        <Form.Item>
-          <Button className="button" onClick={() => createNewMeal()} >
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-      <span
-        className={
-          feedbackMessage === "Your meal has been created"
-            ? "feedbackMessageSuccess"
-            : "feedbackMessageError"
-        }
-      >
-        {" "}
-        {feedbackMessage ? feedbackMessage : null}
-      </span>
-    </div>
+          {" "}
+          {feedbackMessage ? feedbackMessage : null}
+        </span>
+      </div>
     </div>
   );
 };

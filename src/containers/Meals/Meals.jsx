@@ -12,13 +12,13 @@ const Foodsearch = () => {
     setSearch(e.target.value);
   };
 
-
-
   useEffect(() => {
     const bring = setTimeout(() => {
       getDataFromAPI(search)
         .then((foodResults) => {
-          setMeals(foodResults.meals);
+          if (foodResults.meals === null) {
+            setMeals([]);
+          } else setMeals(foodResults.meals);
         })
         .catch((error) => console.log(error));
     }, 500);
@@ -34,7 +34,7 @@ const Foodsearch = () => {
         className="searchInput"
         onChange={(e) => inputSearchHandler(e)}
       />
-      {meals.length > 0 && (
+      {meals.length > 0 ? (
         <div className="mealsContainer">
           {meals.map((food) => {
             return (
@@ -44,6 +44,8 @@ const Foodsearch = () => {
             );
           })}
         </div>
+      ) : (
+        <p>This food doesn't exist</p>
       )}
     </div>
   );
